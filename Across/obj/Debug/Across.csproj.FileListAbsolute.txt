@@ -1,0 +1,10 @@
+C:\Users\filip\source\repos\Across\Across\bin\Debug\Across.exe.config
+C:\Users\filip\source\repos\Across\Across\bin\Debug\Across.exe
+C:\Users\filip\source\repos\Across\Across\bin\Debug\Across.pdb
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.csprojResolveAssemblyReference.cache
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.Properties.Resources.resources
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.csproj.GenerateResource.cache
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.csproj.CoreCompileInputs.cache
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.exe
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.pdb
+C:\Users\filip\source\repos\Across\Across\obj\Debug\Across.Form1.resources
