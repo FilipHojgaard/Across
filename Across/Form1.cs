@@ -23,6 +23,8 @@ namespace Across
         Label downTwo;
         Label downThree;
 
+        Label[,] labels = new Label[2,3];
+
         public Form1()
         {
             InitializeComponent();
@@ -34,61 +36,51 @@ namespace Across
         // Laver de forskellige labels, bliver kaldt i starten
         public void MakeLabels()
         {
-            rightOne = new Label {
-                Text = "hej",
-                Name = "oppe1",
-                AutoSize = true,
-                Location = new Point(400, 125),
-                Visible = true,
-            };
-            rightTwo = new Label {
-                Text = "hej",
-                Name = "oppe2",
-                AutoSize = true,
-                Location = new Point(400, 225),
-                Visible = true,
-            };
-            rightThree = new Label {
-                Text = "jeg er label 3",
-                Name = "oppe3",
-                AutoSize = true,
-                Location = new Point(400, 325),
-                Visible = true,
-            };
-
-            downOne = new Label {
-                Text = "hej",
-                Name = "oppe1",
-                AutoSize = true,
-                Location = new Point(122, 400),
-                Visible = true,
-            };
-            downTwo = new Label {
-                Text = "hej",
-                Name = "oppe2",
-                AutoSize = true,
-                Location = new Point(222, 400),
-                Visible = true,
-            };
-            downThree = new Label {
-                Text = "hej",
-                Name = "oppe3",
-                AutoSize = true,
-                Location = new Point(322, 400),
-                Visible = true,
-            };
-            this.Controls.Add(rightOne);
-            this.Controls.Add(rightTwo);
-            this.Controls.Add(rightThree);
-
-            this.Controls.Add(downOne);
-            this.Controls.Add(downTwo);
-            this.Controls.Add(downThree);
-
-            if (rightThree.Name == "oppe3") {
-                Console.WriteLine("oppe 3 eksistere" + rightThree.Text);
+            int posX = 0;
+            int posY = 0;
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (i == 0) {
+                        posX = 400;
+                        switch (j) {
+                            case 0:
+                                posY = 122;
+                                break;
+                            case 1:
+                                posY = 222;
+                                break;
+                            case 2:
+                                posY = 322;
+                                break;
+                        }
+                    } 
+                    if (i == 1) {
+                        posY = 400;
+                        switch (j) {
+                            case 0:
+                                posX = 125;
+                                break;
+                            case 1:
+                                posX = 225;
+                                break;
+                            case 2:
+                                posX = 325;
+                                break;
+                        }
+                    }
+                    labels[i, j] = new Label {
+                        Text = "ny",
+                        AutoSize = true,
+                        Location = new Point(posX,posY),
+                    };
+                }
             }
 
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 3; j++) {
+                this.Controls.Add(labels[i,j]);
+                }
+            }
             LabelInformation();
 
         }
@@ -140,12 +132,12 @@ namespace Across
                 oppe3 += 1;
                 nede3 += 1;
             }
-            rightOne.Text = oppe1.ToString();
-            rightTwo.Text = oppe2.ToString();
-            rightThree.Text = oppe3.ToString();
-            downOne.Text = nede1.ToString();
-            downTwo.Text = nede2.ToString();
-            downThree.Text = nede3.ToString();
+            labels[0, 0].Text = oppe1.ToString();
+            labels[0, 1].Text = oppe2.ToString();
+            labels[0, 2].Text = oppe3.ToString();
+            labels[1, 0].Text = nede1.ToString();
+            labels[1, 1].Text = nede2.ToString();
+            labels[1, 2].Text = nede3.ToString();
         }
 
         public void Start()
